@@ -93,7 +93,6 @@ TEST_CASE("Example: decimal deposit", "[ex-5]") {
 
   REQUIRE(sam_account.balance == 320.80);
 }
-
 TEST_CASE("Example: existing account", "[ex-6]") {
   Atm atm;
   atm.RegisterAccount(12345678, 1234, "Sam Sepiol", 300.30);
