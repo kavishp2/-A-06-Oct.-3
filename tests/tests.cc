@@ -84,3 +84,12 @@ TEST_CASE("Example: Simple deposit", "[ex-2]") {
 
   REQUIRE(sam_account.balance == 320.30);
 }
+TEST_CASE("Example: decimal deposit", "[ex-2]") {
+  Atm atm;
+  atm.RegisterAccount(12345678, 1234, "Sam Sepiol", 300.30);
+  atm.DepositCash(12345678, 1234, 20.50);
+  auto accounts = atm.GetAccounts();
+  Account sam_account = accounts[{12345678, 1234}];
+
+  REQUIRE(sam_account.balance == 320.80);
+}
